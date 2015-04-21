@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var exec = require('child_process').execSync;
 
 // Create a user token otherwise you'll hit API rate limit pretty fast

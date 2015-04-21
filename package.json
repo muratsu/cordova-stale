@@ -1,8 +1,7 @@
 {
   "name": "cordova-stale",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "finds stale branches on cordova",
-  "main": "index.js",
   "bin": {
     "cordova-stale": "index.js"
   },
