@@ -79,4 +79,4 @@ msOTRepos.forEach(function(project) {
     var branches = inactiveBranch('msopentech', project, oneDay);
     console.log(branches.join('\n'));
     console.log('');
-})
+});
