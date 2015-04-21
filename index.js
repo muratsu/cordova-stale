@@ -43,8 +43,7 @@ function inactiveBranch(owner, repo, duration) {
     return result;
 }
 
-
-console.log('Fetching a list of repos..');
+console.log('Fetching repo info from github..');
 
 // get list of msopentech cordova repos
 var msOTPages = exec('curl -s -I' + tokenStr + 'https://api.github.com/users/msopentech/repos', {encoding: 'utf8'});
