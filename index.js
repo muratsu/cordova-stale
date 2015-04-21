@@ -53,14 +53,25 @@ msOTPages = msOTPages.split('\n').filter(function(line){
     return ~line.indexOf('Link: ');
 })[0];
 
+if (!msOTPages) {
+    console.log('Probably hit api limit, please add your key.');
+    process.exit(1);
+}
+
 msOTPages = msOTPages.split(',')[1];
 msOTPages = msOTPages.match(/page=(\d+)/i)[1];
 
 var msOTRepos = [];
 
 for (var i = 1; i <= msOTPages; i++) {
-    var repos = exec('curl -s' + tokenStr + '"https://api.github.com/orgs/msopentech/repos?page=' + i + '"');
-    repos = JSON.parse(repos);
+    try {
+        var repos = exec('curl -s' + tokenStr + '"https://api.github.com/orgs/msopentech/repos?page=' + i + '"');
+        repos = JSON.parse(repos);
+        if (repos.message) throw Error(repos.message);
+    } catch (e) {
+        console.log('err: ' + e.message);
+        break;
+    }
     repos = repos.filter(function(repo) {
         return !!~repo.name.indexOf('cordova');
     }).map(function(repo) {
