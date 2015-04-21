@@ -1,0 +1,25 @@
+{
+  "name": "cordova-stale",
+  "version": "0.0.1",
+  "description": "finds stale branches on cordova",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muratsu/cordova-stale.git"
+  },
+  "keywords": [
+    "cordova",
+    "branch",
+    "stale",
+    "developer"
+  ],
+  "author": "Murat Sutunc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muratsu/cordova-stale/issues"
+  },
+  "homepage": "https://github.com/muratsu/cordova-stale"
+}
