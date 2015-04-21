@@ -59,7 +59,7 @@ msOTPages = msOTPages.match(/page=(\d+)/i)[1];
 var msOTRepos = [];
 
 for (var i = 1; i <= msOTPages; i++) {
-    var repos = exec('curl -s' + tokenStr + '"https://api.github.com/orgs/msopentech/repos?page=' + i);
+    var repos = exec('curl -s' + tokenStr + '"https://api.github.com/orgs/msopentech/repos?page=' + i + '"');
     repos = JSON.parse(repos);
     repos = repos.filter(function(repo) {
         return !!~repo.name.indexOf('cordova');
